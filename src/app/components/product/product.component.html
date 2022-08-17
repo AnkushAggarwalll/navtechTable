@@ -8,17 +8,17 @@
         <button class="btn btn-success" (click)="filterData()">Apply</button>
       </form>
       <div class="table-div">
-        <table class="table table-dark table-responsive table-striped table-bordered table-hover table-shadow">
+        <table class="table table-dark table-responsive table-striped table-bordered table-hover table-shadow text-center align-middle">
           <thead>
             <tr>
                 <th></th>
-              <th *ngFor="let column of columns" scope="col">{{column}}</th>
+              <th *ngFor="let column of columns" scope="col"><p>{{column}}</p></th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let row of filteredData" >
                 <td class="addToCart"><i class="bi bi-bag-plus-fill" (click)="addToCart(row)"></i></td>
-              <td *ngFor="let column of columns">{{row[column]}}</td>
+              <td *ngFor="let column of columns"><p>{{row[column]}}</p></td>
             </tr>
           </tbody>
         </table>
