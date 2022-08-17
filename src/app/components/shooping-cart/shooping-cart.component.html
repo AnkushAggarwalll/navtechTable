@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <form [formGroup]="filter" class="">
+        <label for="name">Name : </label>
+        <input formControlName="name" type="text" name="name" id="name">
+        <label for="location">Location : </label>
+        <input formControlName="location"  type="text" name="location" id="location">
+        <button class="btn btn-danger" (click)="clear()">clear</button>
+        <button class="btn btn-success" (click)="filterData()">Apply</button>
+      </form>
+      <div class="table-div">
+        <table class="table table-dark table-responsive table-striped table-bordered table-hover table-shadow">
+          <thead>
+            <tr>
+                <th></th>
+              <th *ngFor="let column of scs.ShoppingCartColumns" scope="col">{{column}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of filteredData; let i = index" >
+                <td class="addToCart"><i class="bi bi-trash" (click)="deleteFromCart(i)"></i></td>
+              <td *ngFor="let column of columns">{{row[column]}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>
