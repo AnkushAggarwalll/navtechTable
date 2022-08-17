@@ -34,7 +34,7 @@ export class ProductComponent {
     let filterValues = this.filter.value
     // if(filterValues.name == '' && filterValues.location == '')
     // alert("before apllying please fill atleast one filter criteria")
-    this.filteredData = this.data.filter(item => item.firstName.toLowerCase().includes(filterValues.name) && item.location.toLowerCase().includes(filterValues.location))
+    this.filteredData = this.data.filter(item => item.firstName.toLowerCase().includes(filterValues.name?.toLowerCase()) && item.location.toLowerCase().includes(filterValues.location?.toLowerCase()))
   }
   addToCart(item:any){
     this.scs.addToCart(item)
