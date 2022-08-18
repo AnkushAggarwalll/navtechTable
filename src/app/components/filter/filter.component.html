@@ -1,0 +1,21 @@
+<form [formGroup]="filter" class="d-flex flex-wrap">
+    <label for="FirstName">FirstName : </label>
+    <input formControlName="firstName" type="text" name="FirstName" id="name">
+    <label for="LastName">LastName : </label>
+    <input formControlName="lastName" type="text" name="LastName" id="name">
+    <label for="Company">Company : </label>
+    <input formControlName="company"  type="text" name="Company" id="Company">
+    <!-- <label for="location">Location : </label>
+    <input formControlName="location"  type="text" name="location" id="location"> -->
+    <label for="location">Location : </label>
+    <select name="location" id="location" formControlName="location">
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Pune">Pune</option>
+        <option value="Banglore">Banglore</option>
+        <option value="Delhi">Delhi</option>
+    </select>
+    <label for="Package">Package : </label>
+    <input formControlName="package"  type="number" name="Package" id="Package">
+    <button class="btn btn-danger" (click)="clear()">clear</button>
+    <button class="btn btn-success" (click)="filterData()">Apply</button>
+  </form>

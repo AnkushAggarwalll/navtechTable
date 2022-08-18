@@ -24,18 +24,18 @@ export class ShoopingCartComponent implements OnInit {
   filteredData=this.data;
   columns:string[] =[];
   clear(){
-    this.filter.setValue({
-      name:'',
-      location:''
-    });
-    this.filteredData = this.data
+    this.data = this.scs.shopingCartData;
+    this.filteredData = this.data;
   }
-  filterData(){
-    console.log(this.filter)
-    let filterValues = this.filter.value
-    // if(filterValues.name == '' && filterValues.location == '')
-    // alert("before apllying please fill atleast one filter criteria")
-    this.filteredData = this.data.filter(item => item.firstName.toLowerCase().includes(filterValues.name?.toLowerCase()) && item.location.toLowerCase().includes(filterValues.location?.toLowerCase()))
+  filterData(filter:any){
+    console.log(filter)
+    let filterValues = filter
+    console.log(filterValues.firstName == '' && filterValues.location == '' && filterValues.lastName == '' && filterValues.company == '' && filterValues.package);
+    
+    if(filterValues.firstName == '' && filterValues.location == '' && filterValues.lastName == '' && filterValues.company == '' && (filterValues.package == 0 || filterValues.package == null))
+    this.clear();
+    else
+    this.filteredData = this.data.filter(item => item.firstName.toLowerCase().includes(filterValues.firstName?.toLowerCase()) && item.location.toLowerCase().includes(filterValues.location?.toLowerCase()) && item.lastName.toLowerCase().includes(filterValues.lastName?.toLowerCase()) && item.company.toLowerCase().includes(filterValues.company?.toLowerCase()) && item.package == filterValues.package)
   }
   deleteFromCart(i:number){
     this.scs.deleteFromCart(i)

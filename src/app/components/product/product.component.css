@@ -2,25 +2,9 @@
     margin: 5px;
 }
 
-form {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.addProduct{
+    float:right
 }
-
-#name {
-    margin-right: 10px;
-}
-
-input {
-    margin: 5px;
-}
-
-table {
-    width: 90%;
-}
-
 .table-div {
     display: flex;
     justify-content: center;
@@ -31,4 +15,7 @@ table {
 }
 i.bi-bag-plus-fill:hover{
     color: green;
+}
+.addProduct{
+    width: fit-content;
 }

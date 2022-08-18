@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>Add Product</h1>
+<form #form = "ngForm" (ngSubmit)="onSubmit(form)">
+    <div mat-dialog-content class="d-flex flex-column">
+      <mat-form-field appearance="fill">
+        <mat-label>firstName</mat-label>
+        <input matInput [(ngModel)]="data.firstName" name="firstName" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>lasttName</mat-label>
+        <input matInput [(ngModel)]="data.lastName" name="lasttName" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>company</mat-label>
+        <input matInput [(ngModel)]="data.company" name="company" required>
+      </mat-form-field>
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>location</mat-label>
+        <input matInput [(ngModel)]="data.location" required>
+      </mat-form-field> -->
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a Location</mat-label>
+        <mat-select [(ngModel)]="data.location" name="location">
+          <mat-option value="Hyderbad">Hyderbad</mat-option>
+          <mat-option value="Pune">Pune</mat-option>
+          <mat-option value="Banglore">Banglore</mat-option>
+          <mat-option value="Delhi">Delhi</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>package</mat-label>
+        <input matInput [(ngModel)]="data.package" name="package" type="number" required>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">Cancel</button>
+      <button type="submit" mat-button [disabled]="!form.valid" [mat-dialog-close]="data" cdkFocusInitial type="submit">Save</button>
+    </div>
+</form>

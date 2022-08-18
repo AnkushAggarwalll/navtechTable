@@ -1,12 +1,7 @@
 <div class="container-fluid">
-    <form [formGroup]="filter" class="">
-        <label for="name">Name : </label>
-        <input formControlName="name" type="text" name="name" id="name">
-        <label for="location">Location : </label>
-        <input formControlName="location"  type="text" name="location" id="location">
-        <button class="btn btn-danger" (click)="clear()">clear</button>
-        <button class="btn btn-success" (click)="filterData()">Apply</button>
-      </form>
+    <div class="row">
+        <app-filter (filter)="filterData($event)" (clear)="clear()"></app-filter>
+    </div>
       <div class="table-div">
         <table class="table table-dark table-responsive table-striped table-bordered table-hover table-shadow">
           <thead>
