@@ -33,7 +33,7 @@ export class ProductComponent {
     if(filterValues.firstName == '' && filterValues.location == '' && filterValues.lastName == '' && filterValues.company == '' && filterValues.package == null)
     this.clear();
     else
-    this.filteredData = this.data.filter(item => item.firstName.toLowerCase().includes(filterValues.firstName?.toLowerCase()) && item.location.toLowerCase().includes(filterValues.location?.toLowerCase()) && item.lastName.toLowerCase().includes(filterValues.lastName?.toLowerCase()) && item.company.toLowerCase().includes(filterValues.company?.toLowerCase()) && item.package == filterValues.package)
+    this.filteredData = this.data.filter(item => item.firstName.toLowerCase().includes(filterValues.firstName?.toLowerCase()) && item.location.toLowerCase().includes(filterValues.location?.toLowerCase()) && item.lastName.toLowerCase().includes(filterValues.lastName?.toLowerCase()) && item.company.toLowerCase().includes(filterValues.company?.toLowerCase())  && (filterValues.package != null?item.package == filterValues.package : true))
   }
   addToCart(item:any){
     this.scs.addToCart(item)

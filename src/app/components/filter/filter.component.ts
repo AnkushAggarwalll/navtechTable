@@ -29,7 +29,7 @@ export class FilterComponent implements OnInit {
     });
     this.Clear.emit();
   }
-  filterData(){
+  filterData(){    
     this.filterDataValues.emit(this.filter.value)
   }
 }
